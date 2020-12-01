@@ -1,0 +1,38 @@
+Feria.Bases de datos
+create table feria(
+    nombre varchar(30),
+    tipo varchar(25),
+    abierta boolean,
+    serie_tiquete varchar(20),
+
+    primary key(nombre)
+);
+create table tiquete(
+    serie varchar (20),
+    color varchar(15),
+    premium boolean,
+    nino boolean,
+    id_cliente varchar(15),
+
+    primary key(serie)
+);
+create table atraccion(
+    nombre varchar(30) primary key,
+    mantenimiento boolean,
+    apto_ninos boolean
+
+    
+);
+create table cliente(
+    id integer,
+    edad integer,
+    -- Si el tiquete es premium o no
+    tiquete_premium varchar(20),
+
+    primary key(id)
+);
+create table servicios(
+    id_cliente integer,
+    nombre_atraccion varchar(30),
+    registro_ingreso date
+);
